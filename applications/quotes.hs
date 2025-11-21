@@ -13,7 +13,7 @@ getAuthor :: Int -> String
 getAuthor i = snd (quotes !! (i-1))
 
 getListIndex :: Quotes -> Int -> String
-getListIndex (x:xs) i = "" ++ (show i) ++ ". " ++ (fst x) ++ "\n" ++ getListIndex xs (i+1)
+getListIndex ((quote,_):xs) i = "" ++ (show i) ++ ". " ++ quote ++ "\n" ++ getListIndex xs (i+1)
 getListIndex _ _ = ""
 
 getList :: Quotes -> String
